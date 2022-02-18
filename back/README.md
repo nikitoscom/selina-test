@@ -12,7 +12,7 @@
 
 All REST requests available here:
 
-https://www.postman.com/nikitos84/workspace/selina/collection/10210279-29ba48b5-46cc-4538-b719-f173976c4a90
+https://www.postman.com/nikitos84/workspace/selina-test/collection/10210279-ccf7aba3-cd2c-4174-9a37-cfa53e4ab662
 
 # Structure of DB
 
