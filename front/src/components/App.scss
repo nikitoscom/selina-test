@@ -1,0 +1,335 @@
+$arrowDown: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgNiA0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0uNjE4IDBoNC43NjRhLjUuNSAwIDAgMSAuNDA0Ljc5NEwzLjgwOCAzLjUxYTEgMSAwIDAgMS0xLjYxNiAwTC4yMTQuNzk0QS41LjUgMCAwIDEgLjYxOCAweiIgZmlsbD0iIzNiM2U0ZCIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+";
+body {
+  font-family: Roboto, serif;
+  .App {
+    max-width: 800px;
+    margin: 0 auto;
+    user-select: none;
+    header {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        height: 32px;
+        color: #000;
+        &:hover {
+          color: #2c50ff;
+        }
+      }
+      .selectLocationWrapper {
+        line-height: 32px;
+        position: relative;
+        span.selectLocation:after {
+          content: "";
+          display: inline-block;
+          width: 6px;
+          height: 4px;
+          position: relative;
+          background-repeat: no-repeat;
+          background-image: url($arrowDown);
+          margin-bottom: 3px;
+          margin-left: 3px;
+        }
+        .menu {
+          display: none;
+          border: 1px solid #444;
+          border-radius: 10px;
+          justify-content: center;
+          margin: 25px auto;
+          flex-wrap: wrap;
+          row-gap: 10px;
+          column-gap: 20px;
+          width: 600px;
+          position: absolute;
+          top: 10px;
+          right: 0;
+          padding: 15px;
+          background-color: #fff;
+          z-index: 100;
+
+          .countryWrapper {
+            position: relative;
+            span.country::after {
+              content: "";
+              display: inline-block;
+              width: 6px;
+              height: 4px;
+              position: relative;
+              background-repeat: no-repeat;
+              background-image: url($arrowDown);
+              margin-bottom: 3px;
+              margin-left: 3px;
+            }
+            .subMenu {
+              position: absolute;
+              border: 1px solid #444;
+              border-radius: 10px;
+              padding: 5px 10px;
+              background-color: #fff;
+              z-index: 101;
+              top: 30px;
+              left: 50%;
+              transform: translate(-50%, 0) scale(0);
+              transition: all 0.1s ease-in 0s;
+              a {
+                display: block;
+                font-size: 14px;
+                line-height: 16px;
+                margin: 10px 5px;
+                white-space: nowrap;
+              }
+            }
+            &:hover {
+              .subMenu {
+                display: block;
+                transform: translate(-50%, 0) scale(1);
+              }
+            }
+          }
+        }
+        &:hover {
+          .menu {
+            display: flex;
+          }
+        }
+      }
+    }
+    main {
+      border: 1px solid #eee;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      a {
+        margin: 15px 0;
+        border-radius: 10px;
+        // border: 1px solid #eee;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// Styles for mobile
+@media (max-width: 800px) {
+  body .App header {
+    margin: 10px 20px;
+    .selectLocationWrapper {
+      position: inherit;
+      .menu {
+        width: auto;
+        left: 0;
+        margin: 30px 3px 0;
+        row-gap: 6px;
+        column-gap: 17px;
+        .countryWrapper .subMenu a {
+          white-space: break-spaces;
+        }
+      }
+    }
+  }
+  article {
+    flex-direction: column;
+    .calendarWrapper {
+      margin: 0 auto;
+    }
+    .slider {
+      margin: 0 auto;
+    }
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+
+.locationInfoWrapper {
+  margin: 10px;
+  .locationInfo {
+    div {
+      border-bottom: 1px solid #eee;
+      padding: 5px;
+    }
+    .subHeader {
+      margin-top: 15px;
+    }
+  }
+  .subHeader {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+    margin: 30px 0 10px;
+  }
+}
+
+.calendarWrapper {
+  width: 300px;
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+
+    .day {
+      text-align: center;
+      flex: 1 0 calc(14% - 14px);
+      border: 1px solid #eee;
+      padding: 5px;
+
+      &.disabled {
+        background-color: rgb(251, 251, 251);
+        color: rgb(226, 226, 226);
+      }
+      &:hover {
+        background-color: grey;
+      }
+      &.hovered {
+        background-color: aqua;
+      }
+      &.selected {
+        background-color: #000;
+        color: #fff;
+      }
+      &.currentDay {
+        color: red;
+      }
+      &.fromDay {
+        color: blue;
+      }
+    }
+  }
+  a.clearRangeButton {
+    width: 100%;
+    margin: 15px 0;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+.sliderAlert {
+  width: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.sliderWrapper {
+  margin: 30px 10px 0;
+}
+.slider {
+  width: 300px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /*
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  */
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+  border-radius: 10px;
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+.slides > div:target {
+  /*   transform: scale(0.8); */
+}
+.author-info {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+.author-info a {
+  color: white;
+}
+img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 3px 0.5rem;
+  position: relative;
+}
+.slider > a:active {
+  top: 1px;
+}
+.slider > a:focus {
+  background: #000;
+}
+
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .slider > a {
+    display: none;
+  }
+}
