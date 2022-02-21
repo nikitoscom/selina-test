@@ -6,3 +6,13 @@ https://gw.selinatech.com/locations/api/locations?includeUpcomingLocations=true&
 so I implemented slider using images from events.
 Carousel implementation copied from
 https://css-tricks.com/css-only-carousel/
+
+---
+
+Bonus front end 2
+
+- Add some buttons with CSS animations to the project
+- Also - feel free to surprise us with anything you find cool
+
+This part of the task was a little bit vague, however, there is an example of what I consider as a cool animation that I implemented recently:
+https://ieltsing.com/writing/medical-care-an-advantage-or-disadvantage-g0g
