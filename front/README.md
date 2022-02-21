@@ -16,3 +16,5 @@ Bonus front end 2
 
 This part of the task was a little bit vague, however, there is an example of what I consider as a cool animation that I implemented recently:
 https://ieltsing.com/writing/medical-care-an-advantage-or-disadvantage-g0g
+
+Another impressive animation(page flipping) can be found here - https://paperracer.com
